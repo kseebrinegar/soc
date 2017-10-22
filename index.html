@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>dropIr</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width = device-width, initial-scale = 1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<header class="container-fluid navbar-inverse padding-left-none-450">
+			<div class="row">
+				<div class="col-xs-1">
+					<a class="navbar-brand">dropIr</a>
+				</div>
+				<div class="float-right">
+					<input type="text" class="search-bar form-control">
+  					<div class="search-bar-icon">
+  						<i class="fa fa-search fa-lg" aria-hidden="true"></i>
+  					</div>
+  					<div class="realitive avatar-icon">
+						<img src="img/avatar.png">
+						<div class="badge total-badge">5</div>	
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<nav class="nav close-nav navbar-inverse">
+			<div class="green-box display-none">
+				<div class="realitive">
+					<span class="lock locks glyphicon fa fa-lock fa-2x" aria-hidden="true"></span>
+					<span class="unlock locks display-none glyphicon fa fa-unlock fa-2x" aria-hidden="true"></span>
+				</div>
+			</div>
+			<div class="open-main-nav">
+			<div class="main-nav">
+				<div>
+					<p class="small-margin-bottom">MAIN</p>
+				</div>
+				<div class="nav-icons">
+					<a class="active-nav-icon" href="#"><span class="glyphicon 	fa fa-eye fa o fa-lg" aria-hidden="true"></span><p>Overview</p></a>
+				</div>
+				<div class="nav-icons">
+					<a href="#"><span class="glyphicon fa fa-user-circle-o fa-lg" aria-hidden="true"></span><p>Activity</p></a>
+				</div>
+				<div class="nav-icons">
+					<a href="#"><span class="glyphicon fa fa-heart-o fa-lg" aria-hidden="true"></span><p>Dearest</p></a>
+				</div>
+				<div class="nav-icons">
+					<a href="#"><span class="glyphicon fa fa-folder-open-o fa-lg" aria-hidden="true"></span><p>Folders</p></a>
+				</div>
+				</div>
+			<div class="main-nav">
+				<div>
+					<p class="small-margin-bottom">FILTER</p>
+				</div>
+				<div class="nav-icons-filter realitive">
+					<a href="#" class="active-nav-icon-filter"><span class="glyphicon fa fa-picture-o fa-lg" aria-hidden="true"></span><p>Images</p></a>
+                    <div class="badge image-badge">3</div>  
+				</div>
+				<div class="nav-icons-filter realitive">
+					<a href="#" class="active-nav-icon-filter"><span class="glyphicon fa fa-file-audio-o fa-lg" aria-hidden="true"></span><p>Audio</p></a>
+                    <div class="badge audio-badge">1</div>  
+				</div>
+				<div class="nav-icons-filter realitive">
+					<a href="#" class="active-nav-icon-filter"><span class="glyphicon fa fa-video-camera fa-lg" aria-hidden="true"></span><p>Video</p></a>
+                    <div class="badge video-badge">1</div>  
+				</div>
+			</div>
+			</div>
+		</nav>
+		
+		<section class="section container-fluid">
+			<div class="switch margin-top-sm small-margin-bottom display-none">
+				<div class="switch-btn">
+					<div class="switch-circle"></div>
+				</div>
+			</div>
+			<div class="dropdown-menu-main">
+				<div class="float-left">
+					<div class="margin-top-sm">
+						<h2>Overview</h2>
+					</div>
+					<div class="overview-icons add margin-top-sm text-center">
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					</div>
+					<div class="overview-icons folder-icon margin-top-sm text-center padding-icon">
+						<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+					</div>
+					<div class="overview-icons lock-icon margin-top-sm text-center">
+						<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+					</div>
+					<div class="overview-icons delete margin-top-sm text-center padding-icon">
+						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+ 					</div>
+                    <div class="delete-container1">
+                        <p class="counter hide"><strong>Selected items: </strong><span><strong id="items-selected"></strong></span></p>
+                    </div>
+                    <div class="uploaded uploaded1 hide">
+                        <p class="overview-line-height"><strong>Name:</strong> <span class="file-name"></span></p>
+                        <p><strong>Size:</strong> <span class="file-size"></span></p>
+                    </div>
+                     <div class="lock-files hide">
+                        <p><strong>Files locked:</strong> <span class="files-locked"></span></p>
+                    </div>
+                     <div class="add-folder hide">
+                        <form class="new-folder">
+                            <strong>Add new folder</strong><input class="margin-top-sm" type="text" placeholder="Type Folder Name">
+                        </form>
+                    </div>
+                </div>
+				<div class="float-right delete-container">
+					<button type="button" class="hide delete-btn btn btn-default">Delete</button>
+				</div>
+				<div class="float-right uploaded hide">
+					<div class="uploaded-attr">
+						<input type="file" name="file" id="file" class="inputfile uploaded-btn"/>
+						<label  for="file"><i class="fa fa-upload" aria-hidden="true"></i> Choose a file</label>
+					</div>
+					<div id="message-error" class="hide"><p>File not supported!</p></div>
+					<div id="message-success" class="hide"><p>File uploaded!</p></div>
+				</div>
+			</div>
+
+            <!-- ACTIVITY       -->
+
+            <div class="dropdown-menu-main hide">
+                <div class="float-left">
+                    <div class="margin-top-sm">
+                        <h2>Activity</h2>
+                    </div>
+                    <div class="float-left activity margin-top-sm">
+                        <p><strong>Added files: </strong><strong class="recently-added">0</strong></p>
+                        <p><strong>Downloads: </strong><strong class="downloads">0</strong></p>
+                    </div>
+                    <div class="float-left activity margin-top-sm">
+                        <p><strong>Deleted: </strong><strong class="deleted">0</strong></p>
+                        <p><strong>Likes: </strong><strong class="likedCount">0</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dearest -->
+
+               <div class="dropdown-menu-main hide">
+                <div class="float-left">
+                    <div class="margin-top-sm">
+                        <h2>Dearest</h2>
+                    </div>
+                    <div class="float-left activity margin-top-sm">
+                        <p><i class="fa fa-heart fa-5x" aria-hidden="true"></i></p>
+                        <p><strong>Favorites: </strong><strong class="favorites">0</strong></p>
+                    </div>
+                </div>
+            </div>
+             
+            <!-- Folders -->
+
+               <div class="dropdown-menu-main hide">
+                <div class="float-left">
+                    <div class="margin-top-sm">
+                        <h2>Folder</h2>
+                    </div>
+                    <div class="float-left activity margin-top-sm">
+                        <p><strong>Image files: </strong><strong class="image-files">0</strong></p>
+                        <p><strong>Audio files: </strong><strong class="audio-files">0</strong></p>
+                    </div>
+                    <div class="float-left activity margin-top-sm">
+                        <p><strong>Video files: </strong><strong class="video-files">0</strong></p>
+                        <p><strong>Total files: </strong><strong class="total-files">0</strong></p>
+                    </div>
+                </div>
+            </div>
+
+			
+
+			<div class="images content-containers">
+                <p class="border-overview"></p>
+                <h2 class="file-headers">Images</h2>
+				<div class="row">
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic16.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>cliffwithwater.jpg</p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">48</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic16.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+                                <button type="button" class="new btn btn-default">New!</button>
+      						</div>
+    					</div>	
+  					</div>
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic15.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>pinkrose.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic15.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+				</div>
+				<div class="row">
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic14.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>womeninwhite.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">48</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic16.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic13.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>cityinfrontoflake.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic15.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+				</div>
+				<div class="row">
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic12.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>writing.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">48</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic16.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+                                <button type="button" class="new btn btn-default">New!</button>
+      						</div>
+    					</div>	
+  					</div>
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic11.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>smilinggirl.jpg</p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic15.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+                                <button type="button" class="new btn btn-default">New!</button>
+      						</div>
+    					</div>	
+  					</div>
+				</div>
+				<div class="row">
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic10.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>forest.jpg</p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">48</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic16.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic9.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>bird.jpg</p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic15.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+				</div>
+				<div class="row">
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic8.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>mountains.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">48</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic16.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic7.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>castleonlake.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic15.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+				</div>
+				<div class="row">
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic6.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>carvedcave.jpg</p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">48</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic16.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic5.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>oldplane.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic15.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+				</div>
+				<div class="row">
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic4.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>naturebird.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">48</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic16.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic3.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>girloncliff.png </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic15.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+				</div>
+				<div class="row">
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic2.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>girlinwoods.jpg </p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">48</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic16.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+  					<div class="col-sm-6 added-files">
+    					<div class="thumbnail all-data-files realitive delete">
+      						<img src="img/pic1.jpg" alt="...">
+      						<div class="caption img-caption">
+       				 			<p>girloncliff.jpg</p>
+       				 			<div class="likes">
+       				 				<span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+       				 			</div>
+       				 			<div class="thumbsup">
+									<i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 			</div>
+       				 			<div class="download">
+       				 				<a href="img/pic15.jpg" download><i class="fa fa-download" aria-hidden="true"></i></a>
+       				 			</div>
+      						</div>
+    					</div>	
+  					</div>
+				</div>
+			</div>
+
+          
+			<div class="audio content-containers">
+                <p class="border-overview margin-top-m"></p>
+                <h2 class="file-headers">Audio</h2>
+				<div class="row">
+  					<div class="col-sm-12 added-files">
+    					<div class="thumbnail all-data-files realitive delete audio-height">
+                            <div class="audio"> 
+                                <audio controls>
+                                    <source src="audio/20161115-111025.mp3" type="audio/mpeg">    
+                                </audio>
+                            </div>
+      			            <div class="caption audio-caption">
+       				            <p>20161115-111025.mp3</p>
+                            </div>
+       				 	    <div class="likes">
+       				 		    <span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">13</strong></span>
+       				 	    </div>
+       				 	    <div class="thumbsup">
+							    <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+       				 	    </div>
+       				 	    <div class="download">
+       				 		    <a href="audio/20161115-111025.mp3" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </div>
+       				 	</div>
+      				</div>
+    			</div>	
+                <div class="row">
+                    <div class="col-sm-12 added-files">
+                        <div class="thumbnail all-data-files realitive delete audio-height">
+                            <div class="audio"> 
+                                <audio controls>
+                                    <source src="audio/song.mp3" type="audio/mpeg">    
+                                </audio>
+                            </div>
+                            <div class="caption audio-caption">
+                                <p>song.mp3</p>
+                            </div>
+                            <div class="likes">
+                                <span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">23</strong></span>
+                            </div>
+                            <div class="thumbsup">
+                                <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="download">
+                                <a href="audio/song.mp3" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 added-files">
+                        <div class="thumbnail all-data-files realitive delete audio-height">
+                            <div class="audio"> 
+                                <audio controls>
+                                    <source src="audio/20160921-132315.mp3" type="audio/mpeg">    
+                                </audio>
+                            </div>
+                            <div class="caption audio-caption">
+                                <p>20160921-132315.mp3</p>
+                            </div>
+                            <div class="likes">
+                                <span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">5</strong></span>
+                            </div>
+                            <div class="thumbsup">
+                                <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="download">
+                                <a href="audio/20160921-132315.mp3" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </div>
+                            <button type="button" class="new btn btn-default">New!</button>
+                        </div>  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 added-files">
+                        <div class="thumbnail all-data-files realitive delete audio-height">
+                            <div class="audio"> 
+                                <audio controls>
+                                    <source src="audio/20161116-130001.mp3" type="audio/mpeg">    
+                                </audio>
+                            </div>
+                            <div class="caption audio-caption">
+                                <p>20161116-130001.mp3</p>
+                            </div>
+                            <div class="likes">
+                                <span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">22</strong></span>
+                            </div>
+                            <div class="thumbsup">
+                                <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="download">
+                                <a href="audio/20161116-130001.mp3" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+            <div class="video content-containers">
+            <p class="border-overview margin-top-m"></p>
+            <h2 class="file-headers">Video</h2>
+                <div class="row">
+                    <div class="col-sm-12 added-files">
+                        <div class="all-data-files realitive delete thumbnail">
+                            <video controls class="video">
+                                <source src="video/woman_in_white_dress_on_beach.mp4" type="video/mp4">
+                            </video>
+                            <div class="caption video-caption">
+                                <p>woman_in_white.mp4</p>
+                            </div>
+                            <div class="likes">
+                                <span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">13</strong></span>
+                            </div>
+                            <div class="thumbsup">
+                                <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="download">
+                                <a href="video/woman_in_white_dress_on_beach.mp4" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 added-files">
+                        <div class="all-data-files realitive delete thumbnail">
+                            <video controls class="video">
+                                <source src="video/woman_in_white_dress_on_beach.mp4" type="video/mp4">
+                            </video>
+                            <div class="caption video-caption">
+                                <p>woman_in_white.mp4</p>
+                            </div>
+                            <div class="likes">
+                                <span><i class="fa fa-heart" aria-hidden="true"></i> <strong class="num-likes">13</strong></span>
+                            </div>
+                            <div class="thumbsup">
+                                <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="download">
+                                <a href="video/woman_in_white_dress_on_beach.mp4" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                            </div>
+                            <button type="button" class="new btn btn-default">New!</button>
+                        </div>
+                    </div>
+                </div>         
+            </div>
+			<div id="fileDisplayArea"></div>
+		</section>
+
+	
+		
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/images.js"></script>
+	</body>
+</html>

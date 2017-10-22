@@ -1,0 +1,603 @@
+.row {
+	clear: none;
+	display: block !important;
+}
+
+.margin-top-sm {
+	margin-top: 15px;
+}
+
+.margin-top-m {
+	margin-top: 30px;
+}
+
+.inline {
+	display: inline;
+}
+
+.realitive {
+	position: relative;
+}
+
+.position {
+	position: absolute;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+body {
+	color: black;
+}
+
+header {
+	padding: 10px 0px;
+	background: black;
+}
+
+.navbar-brand {
+	color: rgb(46, 179, 152) !important;
+}
+
+.navbar-brand:hover {
+	color: white !important;
+}
+
+.search-bar {
+	margin-top: 8px;
+    border-radius: 15px;
+    width: 200px;
+    display: inline;
+    margin-right: 40px;
+ }
+
+.search-bar-icon {
+	position: absolute;
+	top: 23px;
+	right: 130px;
+	color: grey;
+}
+
+.avatar-icon img {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+.avatar-icon {
+	display: inline-block;
+	margin-right: 25px;
+}
+
+.badge {
+	background-color: red;
+	border-radius: 50%;
+	border: 2px solid black;
+	position: absolute;
+	top: -3px;
+	right: 0px;
+	font-size: 12px;
+	z-index: 10;
+
+}
+
+.image-badge, .audio-badge, .badge-video {
+	top: 0%;
+	margin-right: 0px;
+	
+}
+
+nav {
+	width: 250px;
+	border-top: 2px solid green;
+	color: grey;
+	position: absolute;
+	z-index: 10;
+}
+
+.lock, .unlock {
+	position: absolute;
+	top: 10px;
+
+}
+
+.lock {
+	right: -25px;
+}
+
+.display-none {
+	display: none;
+}
+
+.green-box {
+	background-color: rgb(46, 179, 152);
+	text-align: center;
+	padding: 20px 30px;
+	width: 100%;
+}
+
+.green-box > div {
+	color: white;
+	padding: 10px 20px;
+	height: 50px;
+	border: 2px dashed white;
+}
+
+.small-margin-bottom {
+	margin-bottom: 20px;
+}
+
+.open-main-nav {
+	height: 100vh;
+}
+
+.main-nav {
+	margin-top: 30px;
+	padding: 0px 40px;
+	color: #9d9d9d;
+	margin-bottom: 0px;
+}
+
+.glyphicon-open:hover {
+	cursor: pointer;
+	color: #9d9d9d;
+}
+
+.main-nav  a {
+	color: #9d9d9d;
+	text-decoration: none;
+}
+
+.main-nav  a:hover {
+	color: white;
+}
+
+a.active-nav-icon {
+	color: white;
+}
+
+.main-nav .glyphicon {
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.nav-icons p, .nav-icons-filter p {
+	display: inline-block;
+}
+
+.section {
+	padding: 0px 25px;
+	margin-left: 250px;
+}
+
+.dropdown-menu-main {
+	margin-bottom: 220px;
+}
+
+.overview-icons {
+	border: 2px solid #9d9d9d;
+	padding: 3px 2px 2px 4px;
+	border-radius: 50%;
+	margin-right: 25px;
+	height: 30px;
+	width: 30px;
+	color: #9d9d9d;
+	display: inline-block;
+}
+
+.border-overview {
+	border: 1px solid #9d9d9d;	
+	clear: both;
+}
+
+.overview-margin {
+	margin-top: 5px;
+	display: inline-block;
+}
+
+.overview-line-height {
+	line-height: 35px;
+}
+
+.uploaded {
+	margin-top: 80px;
+}
+
+.uploaded1 {
+	margin-top: 25px;
+}
+
+.uploaded > .uploaded-attr {
+	padding-right: 0;
+}
+
+.padding-icon {
+	padding-right: 4px;
+	padding-top: 4px;
+}
+
+.uploaded-attr {
+	color: #9d9d9d;
+	display: inline-block;
+	padding-right: 15px;
+	color: black;
+}
+
+.uploaded-attr:last-of-type {
+	padding-right: 5px;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  	padding: 5px 10px;
+  	border-radius: 15px;
+  	margin-right: none;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(46, 179, 152);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #47CB8F;
+}
+
+.switch-btn {
+	width: 100px;
+	height: 40px;
+	position: relative;
+	cursor: pointer;
+	background: red;
+	border-radius: 20px;
+	box-shadow: inset 0 10px 10px rgba(0, 0, 0, .3)
+
+}
+
+.switch-circle {
+	content: '';
+	position: absolute;
+	height: 36px;
+	width: 36px;
+	background: linear-gradient(#fff, #f2f2f2);
+	left: 2px;
+	top: 2px;
+	transition: all 150ms ease-out;
+	border-radius: 50%;
+	box-shadow: 0 8px 6px -4px rgba(0, 0, 0, .25);
+}
+
+.active-nav-icon-filter {
+	color: white !important;
+}
+
+/***************** OVERVIEW ICONS ******************/
+
+.active-overview-icon {
+	background: lightgrey;
+	color: black;
+	border: 2px solid rgb(46, 179, 152);
+}
+
+.file-name, .file-size {
+	color: green;
+	padding-left: 5px;
+}
+
+.active-overview-icon-delete {
+	background: red;
+	color: black;
+	border: 2px solid rgb(46, 179, 152);
+}
+
+.delete-btn {
+	background: red;
+	padding: 5px 15px;
+	display: inline-block;
+	border-radius: 15px;
+	color: white;
+}
+
+.new {
+	position: absolute;
+	bottom: 14px;
+	right: 10px;
+	background: red;
+	padding: 5px 15px;
+	display: inline-block;
+	border-radius: 15px;
+	color: white;
+}
+
+.delete-btn:hover {
+	background: red;
+	color: white;
+}
+
+.delete-container {
+	margin-top: 80px;
+}
+
+.delete-container1 {
+	margin-top: 25px;
+}
+
+#message-error, #message-success {
+ 	text-align: right;
+ 	margin-top: 25px;
+ 	margin-bottom: 5px;
+ 	font-weight: 900;
+ 	color: red;
+}
+
+#message-error {
+	color: red;
+}
+
+#message-success {
+	color: green;
+}
+
+.counter {
+	color: black;
+}
+
+#items-selected {
+	color: red;
+	padding-left: 5px;
+}
+
+.favorites {
+	color: green;
+}
+
+/***************** END OF OVERVIEW ICONS ***********/
+
+/******************** FILTER IMAGES ***************/
+
+.thumbnail {
+	border: 2px solid lightgrey;
+
+}
+
+.thumbnail:hover {
+	background: lightgrey; 
+	border: 2px solid rgb(46, 179, 152);
+}
+
+.likes span {
+	vertical-align: text-top;
+}
+
+.fa-heart {
+	color: red;
+	vertical-align: baseline;
+}
+
+.likes, .thumbsup, .download {
+	position: absolute;
+	border-radius: 5px;
+	height: 25px;
+	width: 50px;
+	opacity: .6;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+.likes, .thumbsup {
+	top: 20px;
+}
+
+.likes {
+	right: 20px;
+	background: white;
+}
+
+.thumbsup {
+	left: 20px;
+	color: black;
+	cursor: pointer;
+}
+
+.thumbsup {
+	top: -5px;
+	left: -35px;
+	width: 1; 
+ 	height: 1; 
+ 	border-left: 60px solid transparent;
+  	border-right: 60px solid transparent;
+  	border-bottom: 60px solid rgb(46, 179, 152);
+  	-ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(90deg); 
+    transform: rotate(-45deg);
+
+}
+
+.download {
+	background: white;
+	bottom: 60px;
+	right: 20px;
+	padding-top: 3px;
+}
+
+.download:hover, .thumbsup:hover {
+	opacity: 1;
+}
+
+.fa-download {
+	color: black;
+}
+
+.fa-thumbs-o-up {
+	color: black;
+	position: absolute;
+	top: 23px;
+	left: -13px;
+	transform: translate(-50%, -50%);
+	-ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(90deg); 
+    transform: rotate(40deg);
+}
+
+.active-file {
+	background: red;
+	opacity: .7;
+}
+
+.delete-btn:focus {
+	background: red;
+	color: white;
+}
+.active-nav-icon-filter {
+	color: white;
+}
+
+.video {
+	max-width: 1000px;
+	width: 100%;
+	height: auto;
+}
+
+.file-headers {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 25px;
+	color: #9d9d9d;
+	text-shadow: 4px 4px 2px lightgrey;
+}
+
+
+.line-through {
+	text-decoration: line-through;
+	color: red;
+}
+
+.caption {
+	font-weight: 600;
+}
+
+/******** ACTIVITY **************/
+.recently-added, .downloads, .deleted, .likedCount, .image-files, .audio-files, .video-files, .total-files,
+ .files-locked, .click-file-lock {
+	color: green;
+	padding-left: 5px;
+}
+
+.activity {
+	margin-right: 25px;
+	margin-bottom: 21px;
+	color: #9d9d9d;
+}
+
+.lock-red {
+	opacity: .5;
+	background: rgb(46, 179, 152);
+}
+
+.add-folder input {
+	padding: 5px 10px;
+	border-radius: 2px;
+	outline-color: rgb(46, 179, 152);
+	display: block;
+}
+
+/***************** END OF FILTER IMAGES ************/
+
+.audio-height {
+	height: 197px;
+}
+
+audio {
+	margin-top: 100px;
+
+}
+
+button:focus {
+	outline: 0 !important;
+}
+
+@media (max-width: 796px) {
+	.section {
+		margin-left: 30px;
+	}
+}
+
+@media (max-width: 571px) {
+	.overview-icons {
+		display: block;
+	}
+
+	.uploaded-attr {
+		color: #9d9d9d;
+		display: block;
+		padding-right: 15px;
+		text-align: center;
+	}
+
+	.dropdown-menu-main {
+		margin-bottom: 355px;
+	}
+
+	.delete-container {
+		margin-top: 65px;
+
+	}
+
+	#message-success, #message-error {
+		padding-right: 0px;
+		margin-top: 0px
+	}
+	
+	.float-right {
+		margin-top: 65px;
+	}
+	
+	.activity {
+		float: none;
+		margin-bottom: 0px;
+	}
+	
+	.activity p {
+		margin-top: 20px;
+	}
+
+	header .float-right {
+		margin-top: 0;	
+	}
+
+	audio {
+		width: 200px;
+	}
+
+}
+
+@media (max-width: 480px) {
+	.padding-left-none-450 {
+		padding-left: 0 !important;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
